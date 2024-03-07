@@ -47,7 +47,6 @@ const FormFilter = ({ data }: Properties) => {
         <h1 className="col-span-full text-4xl lg:text-5xl font-thin text-blue lg:mb-5 animate-fadein">
           Search for a country/
         </h1>
-
         <fieldset className="col-span-full lg:col-span-1">
           <input
             type="text"
@@ -58,7 +57,6 @@ const FormFilter = ({ data }: Properties) => {
             <Search className="w-6 h-6" />
           </button>
         </fieldset>
-
         <fieldset className="col-span-full lg:col-span-1">
           <select onChange={(event) => filter(event)}>
             <option disabled selected>
@@ -73,7 +71,6 @@ const FormFilter = ({ data }: Properties) => {
           </select>
         </fieldset>
       </form>
-
       {filteredData.length > 0 && (
         <>
           <h2 className="text-3xl lg:text-4xl font-extralight text-blue mt-10 mb-5">
