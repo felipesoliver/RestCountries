@@ -1,0 +1,5 @@
+/* Cta Link */
+
+.cta {
+    @apply px-6 py-2 rounded-lg bg-transparent border border-blue-light hover:bg-blue-light duration-200;
+}

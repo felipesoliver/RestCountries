@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './buttons.css';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply antialiased font-roboto;
+}
+
+@layer components {
+  .container {
+    @apply px-4 w-full md:px-8 lg:px-0 mx-auto lg:w-11/12 lg:max-w-[81.25rem];
+  }
+
+  .container-small {
+    @apply px-4 w-full md:px-8 lg:px-0 mx-auto lg:w-10/12 lg:max-w-[67.5rem];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

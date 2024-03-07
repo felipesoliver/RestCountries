@@ -1,0 +1,33 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "axios": "^1.6.7",
+    "classnames": "^2.5.1",
+    "next": "14.1.2",
+    "next-compose-plugins": "^2.2.1",
+    "next-plugin-svgr": "^1.1.10",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.2",
+    "postcss": "^8",
+    "typescript": "^5"
+  }
+}
