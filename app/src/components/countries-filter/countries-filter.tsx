@@ -18,7 +18,7 @@ const CountriesFilter = () => {
   }, [])
 
   return (
-    <section className="lg:min-h-screen lg:flex lg:items-center">
+    <section className="lg:min-h-screen lg:flex lg:items-center py-20">
       <div className="container">
         <FormFilter data={countries}/>
       </div>

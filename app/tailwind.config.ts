@@ -38,8 +38,8 @@ module.exports = {
         light: '#B8E2F2',
       },
       gray: {
-        DEFAULT: '#E5E5E5',
-        light: '#1C1C1C',
+        DEFAULT: '#1C1C1C',
+        light: '#4D4D4D',
       },
     },
     screens: {
@@ -81,6 +81,9 @@ module.exports = {
         1600: '1600ms',
         1800: '1800ms',
         2000: '2000ms',
+      },
+      backgroundImage: {
+        select: "url('/images/arrow-down.svg')",
       },
     },
   },

@@ -1,0 +1,15 @@
+/* Tables */
+
+.result-table {
+  border-collapse:separate;
+  border-spacing: 0;
+  @apply lg:w-full border border-blue-light rounded-lg overflow-hidden;
+}
+
+.result-table td {
+  @apply px-4 py-2 lg:py-4 text-gray-light;
+}
+
+.result-table thead td {
+  @apply text-lg text-blue bg-blue-light bg-opacity-20;
+}
