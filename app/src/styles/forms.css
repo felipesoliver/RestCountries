@@ -1,0 +1,25 @@
+/* Forms */
+
+.form-filter fieldset {
+  @apply flex rounded-md animate-fadein;
+}
+
+.form-filter input,
+.form-filter select {
+  @apply px-4 py-2 lg:py-4 border border-blue-light text-gray-light;
+  @apply w-full bg-neutral focus:outline-none;
+}
+
+.form-filter input {
+  @apply rounded-tl-lg rounded-bl-lg;
+}
+
+.form-filter select {
+  @apply rounded-lg bg-select bg-no-repeat;
+  background-position: right 16px top 50%;
+  background-size: 24px 24px;
+  -webkit-appearance: none;
+  -webkit-moz: none;
+  -webkit-os: none;
+  appearance: none;
+}

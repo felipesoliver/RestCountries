@@ -15,16 +15,17 @@ module.exports = {
     colors: {
       current: {
         DEFAULT: 'currentColor',
-        hover: 'var(--color-on-hover)',
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-        border: 'var(--color-border)',
       },
       transparent: 'transparent',
       black: '#000000',
       beige: {
         DEFAULT: '#D8CFC1',
         light: '#E7DDCC',
+      },
+      blue: {
+        DEFAULT: '#77C3EC',
+        light: '#B8E2F2',
+        lightness: '#EEFAFF'
       },
       neutral: {
         DEFAULT: '#FFFFFF',
@@ -33,13 +34,9 @@ module.exports = {
       danger: '#FFD600',
       error: '#E90016',
       success: '#00AB27',
-      blue: {
-        DEFAULT: '#77C3EC',
-        light: '#B8E2F2',
-      },
       gray: {
-        DEFAULT: '#E5E5E5',
-        light: '#1C1C1C',
+        DEFAULT: '#1C1C1C',
+        light: '#797979',
       },
     },
     screens: {
@@ -81,6 +78,9 @@ module.exports = {
         1600: '1600ms',
         1800: '1800ms',
         2000: '2000ms',
+      },
+      backgroundImage: {
+        select: "url('/images/arrow-down.svg')",
       },
     },
   },
