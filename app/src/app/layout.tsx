@@ -1,13 +1,7 @@
 import classNames from "classnames";
 import type { Metadata } from "next";
-import { Outfit, Roboto} from "next/font/google";
+import { Roboto} from "next/font/google";
 import "~/src/styles/globals.css";
-
-export const outfit = Outfit({
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-outfit',
-});
 
 export const roboto = Roboto({
   display: 'swap',
@@ -28,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={classNames(outfit.className, roboto.className)}>{children}</body>
+      <body className={classNames(roboto.className)}>{children}</body>
     </html>
   );
 }

@@ -63,7 +63,6 @@ module.exports = {
         fadein: 'fadein .3s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards',
       },
       fontFamily: {
-        outfit: ['var(--font-outfit)', ...fontFamily.sans],
         roboto: ['var(--font-roboto)', ...fontFamily.sans],
       },
       fontSize: {
