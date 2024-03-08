@@ -5,51 +5,73 @@ import { ReactComponent as Search } from '~/assets/icons/search.svg';
 import Table from '../table';
 
 interface Properties {
-  data: Array<{}>
+  data: Array<{}>;
 }
 
 const FormFilter = ({ data }: Properties) => {
-  const [keyword, setKeyword] = useState<string>('')
-  const [filteredData, setFilteredData] = useState<any[]>([])
-  const [storedData, setStoredData] = useState<any[]>([])
-  const [feedback, setFeedback] = useState<string>('')
+  const [keyword, setKeyword] = useState<string>('');
+  const [filterActive, setFilterActive] = useState<boolean>(false);
+  const [filteredData, setFilteredData] = useState<any[]>([]);
+  const [storedData, setStoredData] = useState<any[]>([]);
+  const [feedback, setFeedback] = useState<string>('');
 
   // Order data by name function
-  const orderedData = orderByName(data)
+  const orderedData = orderByName(data);
 
   // Handle search keyword function
   const handleKeyword = useCallback((event: any) => {
-    setKeyword(event.target.value)
-  }, [])
+    setKeyword(event.target.value);
+  }, []);
 
   // Search function
   const search = useCallback(() => {
+    setFilterActive(true);
     setFilteredData([
       ...data.filter(
         (country: any) =>
           country.name.common === keyword ||
-          country.name.common.includes(keyword)
+          country.name.common.includes(keyword) ||
+          country.name.common.toLowerCase().includes(keyword.toLowerCase())
       ),
-    ])
-  }, [data, keyword])
+    ]);
+  }, [data, keyword]);
 
   // Filter function
   const filter = useCallback(
     (event: any) => {
+      setFilterActive(true);
       setFilteredData([
         ...data.filter(
           (country: any) => country.name.common === event.target.value
         ),
-      ])
+      ]);
     },
     [data]
-  )
+  );
 
   // Stored Data Updater
   useEffect(() => {
-    setStoredData(storedData.concat(filteredData))
-    filteredData.length == 0 ? setFeedback('No results') : setFeedback('')
-  }, [filteredData])
+    setStoredData(storedData.concat(filteredData));
+    filterActive && filteredData.length == 0
+      ? setFeedback('No results')
+      : setFeedback('');
+  }, [filteredData]);
+
+  // Reset history function
+  const resetHistory = useCallback(() => {
+    setStoredData([]);
+  }, []);
+
+  // Remake sort function
+  const remakeSort = useCallback(
+    (keyword: string) => {
+      setFilterActive(true);
+      setFilteredData([
+        ...data.filter((country: any) => country.name.common === keyword),
+      ]);
+    },
+    [data]
+  );
 
   return (
     <div className="mx-auto max-w-[62.5rem]">
@@ -82,7 +104,7 @@ const FormFilter = ({ data }: Properties) => {
         </fieldset>
       </form>
       {filteredData.length > 0 && (
-        <Table data={filteredData} title='Results:' />
+        <Table data={filteredData} title="Results:" />
       )}
       {feedback && (
         <h2 className="text-3xl lg:text-4xl font-extralight text-blue mt-10 mb-5 animate-fadein">
@@ -90,10 +112,16 @@ const FormFilter = ({ data }: Properties) => {
         </h2>
       )}
       {storedData.length > 0 && (
-        <Table data={storedData} title='History:' />
+        <Table
+          data={storedData}
+          title="History:"
+          reset={resetHistory}
+          downloadCSV
+          remakeSort={remakeSort}
+        />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default FormFilter
+export default FormFilter;
