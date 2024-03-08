@@ -36,7 +36,7 @@ module.exports = {
       success: '#00AB27',
       gray: {
         DEFAULT: '#1C1C1C',
-        light: '#4D4D4D',
+        light: '#797979',
       },
     },
     screens: {
